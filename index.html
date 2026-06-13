@@ -1,2 +1,386 @@
-Lucianova Creative
-Lucianova Creative - Under Construction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucia Nova Creative Ltd — Independent App Studio</title>
+  <meta name="description" content="Lucia Nova Creative Ltd is an independent iOS and Android app studio based in London, England. We design and build considered apps for curious people.">
+  <meta property="og:title" content="Lucia Nova Creative Ltd">
+  <meta property="og:description" content="An independent iOS and Android app studio based in London. We design and build considered apps for curious people.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lucianovacreative.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F4F4F2;
+      --ink: #111110;
+      --mid: #6B6B68;
+      --rule: #D8D8D4;
+      --accent: #3D5A80;
+      --accent-hover: #2C4260;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      background: var(--bg);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    nav.scrolled { border-bottom-color: var(--rule); }
+
+    .nav-name {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    section:last-of-type { border-bottom: none; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 130px 0 110px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 36px;
+      max-width: 640px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--mid);
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 48px;
+    }
+
+    /* ── ABOUT ── */
+    #about h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+
+    .about-body p {
+      color: var(--ink);
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-contact {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+      font-size: 14px;
+      color: var(--mid);
+    }
+    .about-contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .about-contact a:hover { color: var(--accent-hover); }
+
+    /* ── WORK ── */
+    #work h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 48px;
+    }
+
+    .app-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 24px;
+      padding: 36px 0;
+      border-top: 1px solid var(--rule);
+    }
+    .app-card:last-child { border-bottom: 1px solid var(--rule); }
+
+    .app-name {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .app-desc {
+      font-size: 15px;
+      color: var(--mid);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .app-link {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+    .app-link:hover { color: var(--accent-hover); }
+    .app-link::after { content: '→'; }
+
+    .app-status {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      border: 1px solid var(--rule);
+      padding: 5px 12px;
+      white-space: nowrap;
+      font-weight: 300;
+    }
+
+    /* ── CONTACT ── */
+    #contact h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    #contact p {
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    #contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    #contact a:hover { color: var(--accent-hover); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .footer-legal {
+      font-size: 13px;
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 18px 24px; }
+      .container { padding: 0 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+      section { padding: 72px 0; }
+      .hero { padding: 80px 0 72px; }
+      .app-card { grid-template-columns: 1fr; }
+      .app-status { align-self: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav">
+    <a href="#" class="nav-name">Lucia Nova Creative</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-eyebrow">Lucia Nova Creative Ltd</p>
+        <h1>Apps made with<br><em>care and conviction.</em></h1>
+        <p class="hero-sub">An independent studio designing and building iOS and Android apps for people who want something different.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <p class="section-label">About</p>
+        <h2>Small studio.<br>Deliberate work.</h2>
+        <div class="about-body">
+          <p>Lucia Nova Creative is an independent app studio. We build iOS and Android apps that prioritise depth over noise — products designed to last, not to trend. Every app we make starts from a genuine curiosity about what it could be, not what already exists.</p>
+          <p>We work across the full product lifecycle: concept, design, development, and launch. Our process is unhurried by necessity — we take on few projects so that each one gets the attention it deserves.</p>
+          <p>Lucia Nova Creative Ltd is registered in England and Wales. We are based in London.</p>
+        </div>
+        <div class="about-contact">
+          Enquiries: <a href="mailto:contact@lucianovacreative.com">contact@lucianovacreative.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="container">
+        <p class="section-label">Work</p>
+        <h2>What we're building.</h2>
+
+        <div class="app-card">
+          <div>
+            <p class="app-name">Curio</p>
+            <p class="app-desc">A daily card app for intellectually curious people. Word origins, mythology, philosophy, and lost history — two cards a day, crafted to last sixty seconds and stay with you longer. Coming soon to iOS and Android.</p>
+            <a href="https://curio.app" class="app-link">curio.app</a>
+          </div>
+          <span class="app-status">Coming Soon</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <p class="section-label">Contact</p>
+        <h2>Get in touch.</h2>
+        <p>For general enquiries, partnerships, or press.</p>
+        <p><a href="mailto:contact@lucianovacreative.com">contact@lucianovacreative.com</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer-legal">© 2026 Lucia Nova Creative Ltd. Registered in England and Wales.</p>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+
+</body>
+</html>

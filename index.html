@@ -232,6 +232,11 @@
       font-weight: 300;
     }
 
+    .store-badges { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .store-badge { display: inline-block; }
+    .store-badge img { height: 30px; width: auto; display: block; }
+    .store-badge.disabled { pointer-events: none; opacity: 0.45; filter: grayscale(1); }
+
     /* ── CONTACT ── */
     #contact h2 {
       font-family: var(--serif);
@@ -347,6 +352,10 @@
           <div>
             <p class="app-name">Curio</p>
             <p class="app-desc">A daily card app for intellectually curious people. Word origins, mythology, philosophy, and lost history — two cards a day, crafted to last sixty seconds and stay with you longer. Coming soon to iOS and Android.</p>
+            <div class="store-badges">
+              <span class="store-badge disabled" aria-disabled="true"><img src="images/google-play-badge.png" alt="Google Play — coming soon" width="101" height="30"></span>
+              <span class="store-badge disabled" aria-disabled="true"><img src="images/apple-app-store-badge.svg" alt="App Store — coming soon" width="90" height="30"></span>
+            </div>
             <a href="https://lucianovacreative.com/curio/" class="app-link">curio</a>
           </div>
           <span class="app-status">Coming Soon</span>
@@ -355,10 +364,16 @@
         <div class="app-card">
           <div>
             <p class="app-name">Life in the UK</p>
-            <p class="app-desc">Life in the UK Test 2026 helps you prepare for the official Life in the UK Test — the citizenship and settlement (ILR) test set by the UK Home Office — and pass it on your first attempt. Coming soon to iOS and Android.</p>
+            <p class="app-desc">Life in the UK Test 2026 helps you prepare for the official Life in the UK Test — the citizenship and settlement (ILR) test set by the UK Home Office — and pass it on your first attempt. Available now on Google Play, coming soon to iOS.</p>
+            <div class="store-badges">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.lucianovacreative.lifeintheuk&referrer=utm_source%3Dwebsite%26utm_medium%3Dhomepage_badge%26utm_campaign%3Dlanding_page">
+                <img src="images/google-play-badge.png" alt="Get it on Google Play" width="101" height="30">
+              </a>
+              <span class="store-badge disabled" aria-disabled="true"><img src="images/apple-app-store-badge.svg" alt="App Store — coming soon" width="90" height="30"></span>
+            </div>
             <a href="https://lucianovacreative.com/life-in-the-uk/" class="app-link">Life in the UK</a>
           </div>
-          <span class="app-status">Coming Soon</span>
+          <span class="app-status">Available on Google Play</span>
         </div>
 
       </div>
